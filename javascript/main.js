@@ -116,7 +116,7 @@ function getSelected() {
         case "mtsr": 
             document.getElementById("num2").setAttribute("placeholder", "Millisecond/s");
             document.getElementById("num1").setAttribute("placeholder", "Seconds");
-            document.getElementById("num1").value = z+" Millisecond/s";
+            document.getElementById("num1").value = z+" Second/s";
             document.getElementById("num2").value = SECtoMS(z).toFixed(2) + " Millisecond/s";
             break;
 
