@@ -24,20 +24,19 @@ console.log(Number("123123"));
 console.log(Number("'123123'"));
 // console.log(names[0].length);
 
-document.getElementById("huh").innerHTML = "Time Converter";
 
 function growingText() {
 
-    document.getElementById("huh").style.fontSize = "2rem";
-    document.getElementById("huh").style.transition = "all .3s";
-    document.getElementById("huh").style.position = "relative";
+    document.querySelector("div.a").style.fontSize = "2rem";
+    document.querySelector("div.a").style.transition = "all .3s";
+    document.querySelector("div.a").style.position = "relative";
 
 }
 
 function shrinkText() {
 
-    document.getElementById("huh").style.fontSize = "1rem";
-    document.getElementById("huh").style.position = "relative";
+    document.querySelector("div.a").style.fontSize = "1rem";
+    document.querySelector("div.a").style.position = "relative";
 
 }
 
@@ -81,7 +80,7 @@ function MINtoHR(a) {
 
 function HRtoMIN(a) {
 
-    return a * 60;
+    return (a * 60);
 
 }
 
@@ -89,48 +88,42 @@ function HRtoMIN(a) {
 function getSelected() {
 
     let a = document.getElementById("dropz").value;
-    var z = document.getElementById("num1").value;
+    let z = document.getElementById("num1").value;
 
     switch(a) {
 
         case "mts": 
             document.getElementById("num1").setAttribute("placeholder", "Millisecond/s");
             document.getElementById("num2").setAttribute("placeholder", "Seconds");
-            document.getElementById("num1").value = z+" Millisecond/s";
             document.getElementById("num2").value = MStoSEC(z).toFixed(2) + " Second/s";
             break;
 
         case "stm": 
             document.getElementById("num1").setAttribute("placeholder", "Second/s");
             document.getElementById("num2").setAttribute("placeholder", "Minute/s");
-            document.getElementById("num1").value = z+" Second/s";
             document.getElementById("num2").value = SECtoMIN(z).toFixed(2) + " Minute/s";
             break;
 
         case "mth": 
             document.getElementById("num1").setAttribute("placeholder", "Minute/s");
             document.getElementById("num2").setAttribute("placeholder", "Hour/s");
-            document.getElementById("num1").value = z+" Minute/s";
             document.getElementById("num2").value = MINtoHR(z).toFixed(2) + " Hour/s";
             break;
         case "mtsr": 
             document.getElementById("num2").setAttribute("placeholder", "Millisecond/s");
             document.getElementById("num1").setAttribute("placeholder", "Seconds");
-            document.getElementById("num1").value = z+" Second/s";
             document.getElementById("num2").value = SECtoMS(z).toFixed(2) + " Millisecond/s";
             break;
 
         case "stmr": 
             document.getElementById("num2").setAttribute("placeholder", "Second/s");
             document.getElementById("num1").setAttribute("placeholder", "Minute/s");
-            document.getElementById("num1").value = z+" Minute/s";
             document.getElementById("num2").value = MINtoSEC(z).toFixed(2) + " Seconds/s";
             break;
 
         case "mthr": 
             document.getElementById("num2").setAttribute("placeholder", "Minute/s");
             document.getElementById("num1").setAttribute("placeholder", "Hour/s");
-            document.getElementById("num1").value = z+" Hour/s";
             document.getElementById("num2").value = HRtoMIN(z).toFixed(2) + " Minute/s";
             break;
 

@@ -16,46 +16,68 @@
 </head>
 <body>
 
-    <p id="huh" onMouseOver="growingText()" onMouseOut="shrinkText()"></p>
 
     <div class="container-fluid d-flex flex-wrap justify-content-center align-item-center my-5">
 
-        <div class="container d-flex justify-content-center align-item-center m-1 p-4">
-            <select name="" class="form-control w-75" onChange="num1.value=''; getSelected()" id="dropz" required>
-                <option value="" disabled selected>Please select a conversion unit</option>
-                <option value="mts">Milliseconds -> Seconds</option>
-                <option value="mtsr">Seconds -> Milliseconds</option>
-                <option value="stm">Seconds -> Minutes</option>
-                <option value="stmr">Minutes -> Seconds</option>
-                <option value="mth">Minutes -> Hour</option>
-                <option value="mthr">Hour -> Minutes</option>
-
-            </select>
+        <div class="card w-50">
+            <h1 class="text-primary bold text-center my-4">Time Conversion</h1>
+            <div class="container d-flex justify-content-center align-item-center m-1 p-4">
+                
+                <select name="" class="form-control w-75" onChange="num1.value=''; getSelected()" id="dropz" required>
+                    <option value="" disabled selected>Please select a conversion unit</option>
+                    <option value="mts">Milliseconds -> Seconds</option>
+                    <option value="mtsr">Seconds -> Milliseconds</option>
+                    <option value="stm">Seconds -> Minutes</option>
+                    <option value="stmr">Minutes -> Seconds</option>
+                    <option value="mth">Minutes -> Hour</option>
+                    <option value="mthr">Hour -> Minutes</option>
+    
+                </select>
+                
+            </div>
+    
+            <div class="container d-flex justify-content-center align-item-center m-1 gap-1 p-4">
             
-        </div>
-
-        <div class="container d-flex justify-content-center align-item-center m-1 gap-1 p-4">
+                <input type="text" class="form-control w-25" onfocus="this.value=''; num2.value='';" id="num1">
+                <div class="row p-3"><i class="fa-solid fa-equals"></i></div>
+                <input type="text" class="form-control w-25" id="num2" readonly>
+                
+            </div>
+    
+            <div class="container d-flex justify-content-center align-item-center m-1 p-4">
         
-            <input type="text" class="form-control w-25" onfocus="this.value=''; num2.value='';" id="num1">
-            <div class="row p-3"><i class="fa-solid fa-equals"></i></div>
-            <input type="text" class="form-control w-25" id="num2" readonly>
-            
-        </div>
+                
+                <button class="btn btn-primary w-75" id="rem" onClick=" getSelected(num1.value)"><b>Convert</b></button>
+        
+            </div>
+        
+            <div class="container d-flex justify-content-center align-item-center m-1">
+        
+                <p class="fs-1 text-success" id="ans"></p>
+        
+            </div>
 
-        <div class="container d-flex justify-content-center align-item-center m-1 p-4">
-    
-            
-            <button class="btn btn-secondary w-75" id="rem" onClick=" getSelected(num1.value)">Convert</button>
-    
-        </div>
-    
-        <div class="container d-flex justify-content-center align-item-center m-1">
-    
-            <p class="fs-1 text-success" id="ans"></p>
-    
         </div>
 
     </div>
 
 </body>
+<style>
+     body {
+
+        background-color: #333;
+
+     }
+     .fa-solid {
+
+        color: #333;
+
+     }
+
+     #huh {
+
+        color: aliceblue;
+
+     }
+</style>
 </html>
